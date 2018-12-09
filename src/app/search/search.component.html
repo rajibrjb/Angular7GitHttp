@@ -1,0 +1,27 @@
+
+<div class="container ">
+    <div class="d-flex justify-content-center">
+      <div class="searchbar">
+        <input class="search_input" type="text" (keyup)="onKeyup($event)" name="" placeholder="Search...">
+        <a  (click)="getUser()" class="search_icon"><i class="fas fa-search"></i></a>
+      </div>
+    </div>
+    <div class="row">
+        <p>Totoal Result : {{searchCount}}</p> 
+    </div>
+    <div class="row">
+        <ol *ngIf="searchResult">
+
+            <a *ngFor="let user of searchResult.items" (click)="showUserDetail(user)" ><mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{user.login}}</mat-card-title>
+              </mat-card-header>
+              <img class="profile-image"  md-card-image [src]="user.avatar_url">
+            </mat-card></a>
+          
+          </ol>
+    </div>
+  </div>
+
+  

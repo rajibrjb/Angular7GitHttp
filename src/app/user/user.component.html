@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="col-md-7" *ngIf="data" >
+      <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{data.name}}</mat-card-title>
+            <mat-card-subtitle>{{data.location}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image [src]="data.avatar_url">
+          <mat-card-content>
+            <p>
+              Company : {{data.company}}
+            </p>
+           
+          <p>
+              Created at : {{data.created_at}}
+            </p>
+          </mat-card-content>
+       
+            
+        <ul class="list-inline member-icons animate text-center">
+            <li class="list-inline-item"><button mat-raised-button color="primary"
+              matBadge="{{data.following}}" matBadgePosition="before" matBadgeColor="accent">
+            Following
+          </button></li>
+            <li class="list-inline-item float-left">  <button mat-raised-button color="accent"
+              matBadge="{{data.followers}}" matBadgePosition="before" matBadgeColor="primary">
+            Followers
+          </button></li>
+          </ul>
+          
+        </mat-card>
+  </div>
+  
+</div>
